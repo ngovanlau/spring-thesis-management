@@ -1,0 +1,59 @@
+version : "3.8"
+
+services:
+  mysql:
+    build: 
+      context: ./thesisSpringApplication/mysql
+    image: ngovanlau/thesis-management-mysql
+    restart: always
+    ports:
+      - "3307:3306"
+    environment:
+      MYSQL_DATABASE: thesisspringapp
+      MYSQL_ROOT_PASSWORD: 12345
+      MYSQL_ALLOW_EMPTY_PASSWORD: yes
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      - app-network
+
+  springmvc:
+    build: 
+      context: ./thesisSpringApplication
+    image: ngovanlau/thesis-management-springmvc
+    restart: always
+    environment:
+      HIBERNATE_CONNECTION_URL: jdbc:mysql://mysql:3306/thesisspringapp
+      HIBERNATE_CONNECTION_USERNAME: root
+      HIBERNATE_CONNECTION_PASSWORD: 12345
+      TZ: Asia/Ho_Chi_Minh
+      vnp_ReturnUrl: http://localhost:8080/api/payment/payment_return/
+      spring_fonts_fontvuArialFile: webapps/ROOT/resources/fonts/vuArial.ttf
+      spring_fonts_fontvuArialBoldFile: webapps/ROOT/resources/fonts/vuArialBold.ttf
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mysql
+    networks:
+      - app-network
+
+  reactjs:
+    build:
+      context: ./thesis-web-app
+    restart: always
+    image: ngovanlau/thesis-management-reactjs
+    environment: 
+      REACT_APP_BASE_URL: http://localhost:8080
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mysql
+      - springmvc
+    networks:
+      - app-network
+
+networks:
+  app-network:
+
+volumes:
+  db_data: {}

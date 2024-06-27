@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.2" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
+  <!-- Define Persistence Unit -->
+  <persistence-unit name="my_persistence_unit">
+    <class>com.thesisSpringApp.pojo.ThesisCommitteeRate</class>
+    <class>com.thesisSpringApp.pojo.ThetisUser</class>
+    <class>com.thesisSpringApp.pojo.Member1</class>
+    <class>com.thesisSpringApp.pojo.Score</class>
+    <class>com.thesisSpringApp.pojo.Thesis</class>
+    <class>com.thesisSpringApp.pojo.Committee</class>
+    <class>com.thesisSpringApp.pojo.Role</class>
+    <class>com.thesisSpringApp.pojo.Criteria</class>
+    <class>com.thesisSpringApp.pojo.User</class>
+    <class>com.thesisSpringApp.pojo.Faculty</class>
+    <class>com.thesisSpringApp.pojo.ThesisUser</class>
+    <class>com.thesisSpringApp.pojo.Faculty_1</class>
+    <class>com.thesisSpringApp.pojo.Thesis_1</class>
+    <class>com.thesisSpringApp.pojo.User_1</class>
+    <class>com.thesisSpringApp.pojo.Role_1</class>
+    <class>com.thesisSpringApp.pojo.CommitteeUser</class>
+    <class>com.thesisSpringApp.pojo.ThesisStatus</class>
+    <class>com.thesisSpringApp.pojo.Paymentvnpaydetail</class>
+  </persistence-unit>
+</persistence>

@@ -1,0 +1,54 @@
+.h-chatbox {
+    height: 600px;
+}
+
+.chat-box {
+    border-radius: 10px;
+}
+
+.h-100 {
+    height: 100%;
+}
+
+.list {
+    max-height: 320px;
+    overflow: hidden auto;
+}
+
+.receiver:hover {
+    background-color: #f0f0f0;
+}
+
+.receiver:target {
+    background-color: #f0f0f0;
+}
+
+.br {
+    border-radius: 10px;
+}
+
+.message-left {
+    max-width: 40%;
+    background-color: #b3e5fc;
+}
+
+.message-right {
+    max-width: 40%;
+}
+
+.chat {
+    height: 100%;
+}
+
+.header {
+    border-radius: 10px;
+}
+
+.content {
+    height: 100%;
+    overflow: hidden auto;
+}
+
+.footer {
+    
+}
